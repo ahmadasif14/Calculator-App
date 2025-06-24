@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #F4F2F2;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+:root {
+    --light-black : #818286;
+    --black : #2C2E38;
+    --white : #FFFFFF;
+    --white-smoke : #F9F9F9;
+    --gray : #f6f6f6f7; 
+}
+
+body.dark{
+
+    --light-black : #E0E3EA;
+    --black : #FBFBFC;
+    --white : #22252D;
+    --white-smoke : #2A2D37;
+    --gray : #22252C; 
+
+}
+
+#calculator-area{
+    width: 300px;
+    height: 550px;
+    background-color: var(--white);
+    border-radius: 15px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.calculator .theme-icon{
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 35px);
+    text-align: center;
+    margin: 25px auto;
+    background-color: var(--white-smoke);
+    width: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px 5px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.calculator .theme-icon i{
+    color: var(--black);
+    cursor: pointer;
+}
+
+.calculator .result{
+    text-align: right;
+    height: 220px;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.calculator .result .history #history-value{
+    font-weight: bold;
+    color: var(--light-black);
+    font-size: 18px;
+}
+
+#output-value{
+    font-weight: bold;
+    font-size: 35px;
+    color: var(--black);
+}
+
+.calculator .keyboard{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    align-items: center;
+    justify-items: center;
+    background: var(--white-smoke);
+    border-radius: 15px;
+    height: 330px;
+    padding: 20px 15px;
+}
+
+.calculator .keyboard button{
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--gray);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.calculator .keyboard button:active{
+    transform: scale(0.7)
+}
+
+.calculator .keyboard button.empty{
+    background: transparent;
+    pointer-events: none;
+}
+
+.calculator .keyboard button:first-child,
+.keyboard button:nth-child(2),
+.keyboard button:nth-child(3){
+    color: #67e6d5;
+}
+
+.calculator .keyboard button:nth-child(4),
+.keyboard button:nth-child(8),
+.keyboard button:nth-child(12),
+.keyboard button:nth-child(16),
+.keyboard button:last-child{
+    color: #d46d74;
+}
